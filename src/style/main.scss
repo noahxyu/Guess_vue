@@ -1,0 +1,150 @@
+body, html{
+  font-family:'微軟正黑體', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  background-color: #fff;
+  height: 100%;
+  margin: 0;
+}
+
+div, ul, li, p {
+  box-sizing: border-box;
+}
+
+button,input {
+  outline: none;
+}
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+$width: 800px;
+$xs-width: 768px;
+
+.heading {
+  margin-bottom: 50px;
+}
+
+.input {
+  border: none;
+  padding: 4px 8px;
+}
+
+.input-default {
+  background-color: transparent;
+  border-bottom: 1px solid #cdcdcd;
+  text-align: center;
+  color: #fff;
+}
+
+.btn {
+  border: none;
+  padding: 4px 8px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.btn-default {
+  background-color: #68beda;
+  color: #fff;
+  &:hover {
+    opacity: 0.9;
+    text-shadow: 1px 1px #999;
+  }
+}
+
+.btn-ghost {
+  background-color: #fff;
+  font-size: 18px;
+  color: #204262;
+  padding: 12px 12px;
+  width: 100%;
+  animation: start 1.5s infinite;
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+@keyframes start {
+  0% {
+    box-shadow: 0 0 5px #fff;
+  }
+
+  50% {
+    box-shadow: 0 0 20px #fff;
+  }
+
+  100% {
+     box-shadow: 0 0 10px #fff;
+  }
+}
+
+
+.list {
+  .list-item {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+}
+
+
+.flex-default {
+  display: flex;
+  justify-content: center;
+  @media screen and (max-width: $xs-width){
+    display: block;
+  }
+
+  .flex-item {
+    @media screen and (max-width: $xs-width){
+      margin: 0 0 15px;
+    }
+  }
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
+.container {
+  width: $width;
+  min-height: 400px;
+  margin: 60px auto;
+  background: linear-gradient(to right, #360033, #0b8793);
+  padding: 30px;
+  border: 1px solid #cdcdcd;
+  color: #fff;
+  position: relative;
+  @media screen and (max-width:$xs-width){
+    width: 100%;
+    margin: 0 0;
+  }
+  .heading {
+    text-align: center;
+  }
+}
+
+.answer-wrap {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.level-wrap {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.result-wrap {
+  .result-list {
+    text-align: center;
+  }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}

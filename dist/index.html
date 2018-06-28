@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" >
+  <title>game</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div id="app" class="wrapper">
+    <div class="container">
+      <h1 class="heading">Guess</h1>
+      <div class="level-wrap">
+        <label for="lvEasy">
+          <input type="radio" id="lvEasy" value="easy" v-model="levelModel">
+          Easy
+        </label>
+        <label for="lvNormal">
+          <input type="radio" id="lvNormal" value="normal" v-model="levelModel">
+          Normal
+        </label>
+        <label for="lvHard">
+          <input type="radio" id="lvHard" value="hard" v-model="levelModel">
+          Hard
+        </label>
+      </div>
+      <div class="start-wrap" v-if="!isStart">
+        <button type="button" class="btn btn-ghost" @click="start">Start</button>
+      </div>
+      <transition name="fade">
+        <div class="answer-wrap" v-if="isStart">
+          <div class="flex-default">
+            <div class="flex-item">
+              <input class="input input-default" type="text" v-model="myAnswer">
+              <button type="button" class="btn btn-default" @click="inputValidate">Enter</button>
+            </div>
+            <div class="flex-item">
+              <button type="button" class="btn btn-default" @click="refresh">Refresh</button>
+              <button type="button" class="btn btn-default" @click="clearHistory">Clear History</button>
+            </div>
+          </div>
+        </div>
+      </transition>
+      <div class="result-wrap">
+        <ul class="result-list list list-default">
+          <li class="list-item" v-for="(list, index) in history">
+            {{ index + 1 }}. {{ list.answer }} -- {{ list.resultA }}A{{ list.resultB }}B
+          </li>
+        </ul>
+      </div>
+  </div>
+  </div>
+
+  <script src="js/vue.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
