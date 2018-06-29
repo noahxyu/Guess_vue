@@ -17,19 +17,11 @@ gulp.task('browser-sync', function(){
   browserSync.init({
     port:'61620',
     server:{
-      baseDir:'./dist'
+      baseDir:'./'
     }
   });
 });
 
-
-
-// Html
-gulp.task('html', function(){
-  return gulp.src(path.html)
-    .pipe(gulp.dest('./dist/'))
-    .pipe(browserSync.stream());
-});
 
 
 
@@ -60,8 +52,6 @@ gulp.task('js', function(){
 
 //Build
 gulp.task('build', function(){
-  gulp.src(path.html)
-    .pipe(gulp.dest('./dist/'));
   gulp.src(path.sass)
     .pipe(gulp.dest('./dist/css/'));
   gulp.src(path.js)
@@ -79,28 +69,6 @@ gulp.task('watch', function(){
 
 
 
-
-// minify css
-// gulp.task('minify-css', function() {
-//     return gulp.src('./dist/css/*.css')
-//         .pipe(cleanCSS())
-//         .pipe(gulp.dest('./dist/css/'));
-// });
-
-
-
-// uglify js
-// gulp.task('uglify-js', function (cb) {
-//   pump([
-//         gulp.src('./dist/js/*.js'),
-//         uglify(),
-//         gulp.dest('dist/js')
-//     ],
-//     cb
-//   );
-// });
-
-
 // Static server
 gulp.task('serve',['browser-sync','watch']);
 
@@ -111,12 +79,7 @@ gulp.task('serve',['browser-sync','watch']);
 gulp.task('serve:dist', ['build'], function(){
   browserSync.init({
     server: {
-      baseDir:'./dist/'
+      baseDir:'./'
     }
   });
 });
-
-
-
-//compile
-// gulp.task('default',['minify-css','uglify-js']);
