@@ -48,17 +48,17 @@ var app = new Vue({
     compare(){
       this.questionArr = this.questionNumber.toString().split('')
       var myAnswerArr = this.myAnswer.toString().split('')
-      let A = 0,
+      var A = 0,
           B = 0;
 
-      for(let i = 0; i < this.questionArr.length; i++){
+      for(var i = 0; i < this.questionArr.length; i++){
         // 比對有多少A
         if(myAnswerArr[i] === this.questionArr[i]){
           A += 1
         }
 
         //比對有多少B
-        if((this.questionArr[i].indexOf(myAnswerArr[i]) != -1) && (myAnswerArr[i] != this.questionArr[i])){
+        if((this.questionArr.indexOf(myAnswerArr[i]) != -1) && (myAnswerArr[i] != this.questionArr[i])){
           B += 1
         }
       }

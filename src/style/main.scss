@@ -104,6 +104,13 @@ $xs-width: 768px;
   }
 }
 
+body {
+  @media screen and (max-width:$xs-width){
+    background: linear-gradient(to bottom, #360033, #0b8793);
+    border: 1px solid #cdcdcd;
+  }
+}
+
 .wrapper {
   overflow: hidden;
 }
@@ -118,6 +125,8 @@ $xs-width: 768px;
   color: #fff;
   position: relative;
   @media screen and (max-width:$xs-width){
+    background: none;
+    border: none;
     width: 100%;
     margin: 0 0;
   }
