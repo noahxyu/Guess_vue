@@ -12,7 +12,9 @@ div, ul, li, p {
 
 button,input {
   outline: none;
+  margin: 0;
 }
+
 h1 {
   font-size: 24px;
   font-weight: bold;
@@ -35,6 +37,14 @@ $xs-width: 768px;
   border-bottom: 1px solid #cdcdcd;
   text-align: center;
   color: #fff;
+}
+
+.checkbox {
+  margin: 0 15px;
+  input {
+    display: inline-block;
+    vertical-align: middle;
+  }
 }
 
 .btn {
